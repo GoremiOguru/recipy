@@ -1,12 +1,11 @@
 import { FormField, FormItem, FormMessage } from "@/components/ui/form";
-import { UseFormReturn } from "react-hook-form";
 import { ImageType, ProductFormInput } from "@/lib/validators/product";
 import { Card } from "@/components/ui/card";
 import ImageUploaderContainer from "@/components/media/ImageUploaderContainer";
 import { useState } from "react";
 
 interface ProductAdditionalInfoProps {
-  form: UseFormReturn<ProductFormInput>;
+  form: any;
 }
 
 export function ProductAdditionalInfo(props: ProductAdditionalInfoProps) {
@@ -25,7 +24,7 @@ export function ProductAdditionalInfo(props: ProductAdditionalInfoProps) {
           <FormField
             control={form.control}
             name="images"
-            render={({ field }) => (
+            render={() => (
               <FormItem className="">
                 <ImageUploaderContainer
                   folderName="products"
